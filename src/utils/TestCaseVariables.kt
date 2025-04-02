@@ -1,7 +1,7 @@
 package utils
 
-import ipv4.Ipv4Tester
-import sudoku.SudokuTester
+import week1.ipv4.Ipv4Tester
+import week1.sudoku.SudokuTester
 
 
 // This Objects will contain all the test cases for each week task
@@ -11,7 +11,7 @@ object TestCaseVariables {
 
     // region Sudoku
     val SudokuTestCases = listOf(
-        // region 3x3 sub-grids sudoku
+        // region 3x3 sub-grids week1.sudoku
         SudokuTester(
             name = "Valid 9*9 solvable puzzle",
             puzzle = listOf(
@@ -91,7 +91,7 @@ object TestCaseVariables {
             isSolvable = false
         ),
 
-        // region 2x2 sub-grids sudoku
+        // region 2x2 sub-grids week1.sudoku
         SudokuTester(
             name = "Valid solvable 4*4 puzzle",
             puzzle = listOf(
@@ -143,7 +143,7 @@ object TestCaseVariables {
             isSolvable = false
         ),
 
-        // region 4x4 sub-grids sudoku
+        // region 4x4 sub-grids week1.sudoku
         SudokuTester(
             name = "Valid 16×16 Sudoku",
             puzzle = listOf(

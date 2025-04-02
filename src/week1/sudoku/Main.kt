@@ -1,4 +1,4 @@
-package sudoku
+package week1.sudoku
 
 import kotlin.math.sqrt
 
@@ -19,10 +19,10 @@ fun main(){
 }
 
 /**
- * This function is made to check if the entered sudoku puzzle
- * is a valid sudoku puzzle or not
+ * This function is made to check if the entered week1.sudoku puzzle
+ * is a valid week1.sudoku puzzle or not
  *
- * @param puzzle A multi-dimension list which contains the sudoku puzzle
+ * @param puzzle A multi-dimension list which contains the week1.sudoku puzzle
  * @return Boolean which indicates if the puzzle is solvable or not
  */
 

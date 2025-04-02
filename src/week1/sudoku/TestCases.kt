@@ -1,4 +1,4 @@
-package sudoku
+package week1.sudoku
 
 import utils.TestCaseVariables
 import utils.test

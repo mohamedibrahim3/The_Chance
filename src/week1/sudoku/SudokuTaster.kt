@@ -1,4 +1,4 @@
-package sudoku
+package week1.sudoku
 
 data class SudokuTester(
     val name: String,

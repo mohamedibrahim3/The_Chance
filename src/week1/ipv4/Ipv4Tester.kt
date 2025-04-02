@@ -1,4 +1,4 @@
-package ipv4
+package week1.ipv4
 
 data class Ipv4Tester(
     val name: String,
