@@ -1,7 +1,7 @@
 package week1.ipv4
 
 fun main(){
-    println(ipv4Checker("1.1.30.8"))
+    println(ipv4Checker("0.1.30.@"))
 }
 
 fun ipv4Checker(ipv4: String): Boolean{
@@ -10,7 +10,7 @@ fun ipv4Checker(ipv4: String): Boolean{
 
     // Split the string by dots
     val segments = ipv4.split(".")
-    if(segments.size !=4 || segments[0] == "0" ) return false
+    if(segments.size !=4) return false
 
     // Validate each segment
     for (segment in segments) {

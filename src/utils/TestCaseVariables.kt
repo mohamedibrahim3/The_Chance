@@ -300,21 +300,21 @@ object TestCaseVariables {
 
     // region IPv4
     val ipv4TestCases = listOf(
-        Ipv4Tester(name = "Standard valid IP", ipv4 = "192.168.1.1", result = true),
-        Ipv4Tester(name = "Upper boundary case", ipv4 = "255.255.255.255", result = true),
-        Ipv4Tester(name = "Default IP", ipv4 = "0.0.0.0", result = true),
+        Ipv4Tester(name = "when IP is valid and standard (192.168.1.1)", ipv4 = "192.168.1.1", result = true),
+        Ipv4Tester(name = "when IP is valid and at upper boundary case (255.255.255.255)", ipv4 = "255.255.255.255", result = true),
+        Ipv4Tester(name = "when IP is valid and default (0.0.0.0)", ipv4 = "0.0.0.0", result = true),
 
-        Ipv4Tester(name = "Leading zero in first octet", ipv4 = "001.2.3.4", result = false),
-        Ipv4Tester(name = "Leading zero in second octet", ipv4 = "192.068.1.1", result = false),
+        Ipv4Tester(name = "when IP is invalid due to leading zero in first octet (001.2.3.4)", ipv4 = "001.2.3.4", result = false),
+        Ipv4Tester(name = "when IP is invalid due to leading zero in second octet (192.068.1.1)", ipv4 = "192.068.1.1", result = false),
+        Ipv4Tester(name = "when IP is invalid due to negative number in an octet (192.168.-1.1)", ipv4 = "192.168.-1.1", result = false),
+        Ipv4Tester(name = "when IP is invalid due to only 3 octets instead of 4 (192.168.1)", ipv4 = "192.168.1", result = false),
+        Ipv4Tester(name = "when IP is invalid due to more than 4 octets (192.168.1.1.1.0.0)", ipv4 = "192.168.1.1.1.0.0", result = false),
+        Ipv4Tester(name = "when IP is invalid due to empty octet between dots (192.168..1)", ipv4 = "192.168..1", result = false),
+        Ipv4Tester(name = "when IP is invalid due to letter input (abc.def.ghi.jkl)", ipv4 = "abc.def.ghi.jkl", result = false),
+        Ipv4Tester(name = "when IP is invalid due to symbol input (%$$.###.!.&&&)", ipv4 = "%$$.###.!.&&&", result = false),
+        Ipv4Tester(name = "when IP is invalid due to ultra-mixed input (%$1#.as0d.1.001)", ipv4 = "%$1#.as0d.1.001", result = false),
+        Ipv4Tester(name = "when IP is invalid due to empty address", ipv4 = "", result = false)
 
-        Ipv4Tester(name = "Negative number in an octet", ipv4 = "192.168.-1.1", result = false),
-        Ipv4Tester(name = "Only 3 octets instead of 4", ipv4 = "192.168.1", result = false),
-        Ipv4Tester(name = "More than 4 octets", ipv4 = "192.168.1.1.1.0.0", result = false),
-        Ipv4Tester(name = "Empty octet between dots", ipv4 = "192.168..1", result = false),
-        Ipv4Tester(name = "Letter input", ipv4 = "abc.def.ghi.jkl", result = false),
-        Ipv4Tester(name = "Symbol input", ipv4 = "%$$.###.!.&&&", result = false),
-        Ipv4Tester(name = "Ultra-Mixed Input", ipv4 = "%$1#.as0d.1.001", result = false),
-        Ipv4Tester(name = "Empty address", ipv4 = "", result = false)
     )
     // endregion
 
