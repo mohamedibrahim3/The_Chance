@@ -1,7 +1,7 @@
 package week1.ipv4
 
 fun main(){
-    println(ipv4Checker("1.1.30.3"))
+    println(ipv4Checker("1.1.30.8"))
 }
 
 fun ipv4Checker(ipv4: String): Boolean{
@@ -15,7 +15,7 @@ fun ipv4Checker(ipv4: String): Boolean{
     // Validate each segment
     for (segment in segments) {
         // Check for empty segments or non-numeric content
-        if (segment.isEmpty() || !segment.all { it.isDigit() }) return false
+        if (!segment.all { it.isDigit() }) return false
 
         // Check for leading zeros (but allow "0" itself)
         if (segment.length > 1 && segment.startsWith("0")) return false

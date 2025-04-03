@@ -33,9 +33,6 @@ fun sudokuChecker(puzzle: List<List<Char>>): Boolean {
     // Calculate the size of each sub-grid
     val subgridSize = sqrt(puzzleSize.toDouble()).toInt()
 
-    // Check if puzzle size is valid (3x3 or 4x4)
-    if (puzzleSize != 9 && puzzleSize != 16) return false
-
     // Arrays to store seen numbers for each sub-grid, row, and column
     val boxNumbers = Array(puzzleSize) { HashSet<Char>() }
     val rowNumbers = Array(puzzleSize) { HashSet<Char>() }
@@ -44,18 +41,9 @@ fun sudokuChecker(puzzle: List<List<Char>>): Boolean {
     for (row in 0..<puzzleSize) {
         for (column in 0..<puzzleSize) {
             val cell = puzzle[row][column]
+            if(cell != '-' && cell !in '1'..'9'&& cell !in 'A'..'G') return false
 
             if (cell == '-') continue
-
-            // Check if the cell contains a valid character
-            val isValidChar = when (puzzleSize) {
-                4 -> cell.isDigit() && cell in '1'..'4' // For 2x2: only 1-4
-                9 -> cell.isDigit() && cell in '1'..'9' // For 3x3: only 1-9
-                16 -> (cell.isDigit() && cell in '1'..'9') || (cell in 'A'..'F') // For 4x4: 1-9 or A-F
-                else -> false
-            }
-
-            if (!isValidChar) return false
 
             // The sub-grid number to which the cell belongs
             val subgridIndex = (row / subgridSize) * subgridSize + (column / subgridSize)
