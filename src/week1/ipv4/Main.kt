@@ -9,7 +9,7 @@ fun ipv4Checker(ipv4: String): Boolean{
     if(ipv4.isEmpty() || ipv4.count{it == '.'} != 3) return false
 
     // Split the string by dots
-    val segments = ipv4.split(".")
+    val segments = ipv4.split(".")           //{0, 1, 30, @}
     if(segments.size !=4) return false
 
     // Validate each segment
