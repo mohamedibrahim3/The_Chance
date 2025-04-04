@@ -6,7 +6,7 @@ fun main() {
     println(
         sudokuChecker(
             listOf(
-                listOf('5', '-', '-', '6', '-', '-', '-', '-', '2'),
+                listOf('5', '5', '-', '6', '-', '-', '-', '-', '8'),
                 listOf('-', '-', '-', '-', '-', '-', '-', '-', '-'),
                 listOf('1', '-', '-', '3', '-', '-', '5', '-', '-'),
                 listOf('-', '5', '-', '7', '-', '-', '-', '-', '-'),
@@ -29,6 +29,8 @@ fun main() {
  */
 fun sudokuChecker(puzzle: List<List<Char>>): Boolean {
     val puzzleSize = puzzle.size
+    // Check if the puzzle is square (rows == columns)
+    if (puzzle.any { it.size != puzzleSize }) return false
 
     // Calculate the size of each sub-grid
     val subgridSize = sqrt(puzzleSize.toDouble()).toInt()
