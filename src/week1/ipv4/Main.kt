@@ -1,7 +1,7 @@
 package week1.ipv4
 
 fun main(){
-    println(ipv4Checker("0.1.30.@"))
+    println(ipv4Checker("0.1.30.20"))
 }
 
 fun ipv4Checker(ipv4: String): Boolean{

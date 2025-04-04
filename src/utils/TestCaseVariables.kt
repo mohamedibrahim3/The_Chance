@@ -312,7 +312,7 @@ object TestCaseVariables {
         Ipv4Tester(name = "when IP is invalid due to empty octet between dots (192.168..1)", ipv4 = "192.168..1", result = false),
         Ipv4Tester(name = "when IP is invalid due to letter input (abc.def.ghi.jkl)", ipv4 = "abc.def.ghi.jkl", result = false),
         Ipv4Tester(name = "when IP is invalid due to symbol input (%$$.###.!.&&&)", ipv4 = "%$$.###.!.&&&", result = false),
-        Ipv4Tester(name = "when IP is invalid due to ultra-mixed input (%$1#.as0d.1.001)", ipv4 = "%$1#.as0d.1.001", result = false),
+        Ipv4Tester(name = "when IP is invalid due to ultra-mixed input (%$1#.as0d.1.001)", ipv4 = "%$1#.as0d.+1.001", result = false),
         Ipv4Tester(name = "when IP is invalid due to empty address", ipv4 = "", result = false)
 
     )
