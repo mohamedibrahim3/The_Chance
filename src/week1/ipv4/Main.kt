@@ -3,7 +3,7 @@ package week1.ipv4
 fun main(){
     println(ipv4Checker("0.1.30.20"))
 }
-
+// the chance - bijing squad
 fun ipv4Checker(ipv4: String): Boolean{
     // Check if the string is empty or doesn't have exactly 3 dots
     if(ipv4.isEmpty() || ipv4.count{it == '.'} != 3) return false
